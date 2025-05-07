@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contanier57{
+            width:90%;
+            margin: auto;
+            text-align:right;
+            direction:rtl;
+        }
+
+        .image1-contanier57{
+            width:400px;
+            margin:20px auto;   
+        }
+
+        .image1-contanier57 img{
+            width:100%;
+            border:2px solid gray;
+            border-radius:20px;
+        }
+        .question {
+      display: none;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      text-align: right;
+      width:90%;
+      margin: auto;
+      height:200px;
+    }
+    .question.active {
+      display: flex;
+      flex-direction: column;
+      
+    }
+    .answer {
+      color: green;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+    }
+    .buttons button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .fgdsf{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    label{
+        line-height:30px;
+    }
+    </style>
+</head>
+<body>
+    <div class="contanier57">
+        <div class="top-contanier57">
+            <h3>لينك فيديو</h3>
+           <ol style="line-height:30px;">
+            <li> <a href=" https://youtu.be/Aam2Sz1L9NA?si=SViSVTMQFsA4pdor" target="_blank" >تمارين النطق لمساعدة الطفل الذي يعاني من تأخر الكلام/ تمارين لتقوية أعضاء النطق</a></li>
+            <li> <a href="https://youtu.be/-6nr6nMTCJg?si=hyA1z52zyArwvVTK" target="_blank">تعليم الاطفال النطق بالصوت والصورة | باللهجة المصرية | كلمات الطفل الأولى | ماما | بابا | جدو | تيتا</a></li>
+           </ol>
+        </div>
+    </div>
+    <h1 style="text-align: center;">أسئلة عن صعوبات النطق</h1>
+
+    <div class="question active">
+      <p>1. ما هو المقصود بصعوبات النطق؟</p>
+      <label><input type="radio" name="q1" data-correct="true"> أ) عدم القدرة على إنتاج الأصوات بشكل صحيح</label>
+      <label><input type="radio" name="q1"> ب) صعوبة في فهم الكلام فقط</label>
+      <label><input type="radio" name="q1"> ج) مشاكل في القراءة والكتابة</label>
+      <label><input type="radio" name="q1"> د) التأتأة فقط</label>
+    </div>
+    
+    <div class="question">
+      <p>2. أي من الآتي يُعد مثالًا على صعوبة في الطلاقة؟</p>
+      <label><input type="radio" name="q2"> أ) حذف الحروف من الكلمات</label>
+      <label><input type="radio" name="q2" data-correct="true"> ب) التأتأة المتكررة عند التحدث</label>
+      <label><input type="radio" name="q2"> ج) صعوبة فهم الكلمات</label>
+      <label><input type="radio" name="q2"> د) نطق غير صحيح لحرف “س”</label>
+    </div>
+    
+    <div class="question">
+      <p>3. أي من المهنيين التاليين مسؤول عن تشخيص وعلاج صعوبات النطق؟</p>
+      <label><input type="radio" name="q3"> أ) الطبيب النفسي</label>
+      <label><input type="radio" name="q3" data-correct="true"> ب) أخصائي النطق واللغة</label>
+      <label><input type="radio" name="q3"> ج) المعلم</label>
+      <label><input type="radio" name="q3"> د) أخصائي العلاج الطبيعي</label>
+    </div>
+    
+    <div class="question">
+      <p>4. ما هو العامل البيئي الذي قد يسهم في حدوث صعوبات النطق؟</p>
+      <label><input type="radio" name="q4"> أ) ضعف السمع الوراثي</label>
+      <label><input type="radio" name="q4"> ب) اضطرابات عصبية</label>
+      <label><input type="radio" name="q4" data-correct="true"> ج) قلة التفاعل اللفظي في المنزل</label>
+      <label><input type="radio" name="q4"> د) وجود مشكلة في الفم أو اللسان</label>
+    </div>
+    
+    <div class="question">
+      <p>5. ما هو أحد الأعراض الشائعة لعسر التلفظ (Dysarthria)؟</p>
+      <label><input type="radio" name="q5" data-correct="true"> أ) بطء أو عدم وضوح في النطق</label>
+      <label><input type="radio" name="q5"> ب) حذف الكلمات أثناء الكلام</label>
+      <label><input type="radio" name="q5"> ج) نسيان معاني الكلمات</label>
+      <label><input type="radio" name="q5"> د) تأخر اللغة فقط</label>
+    </div>
+    
+    <div class="question">
+      <p>6. أي من الفئات التالية تعتبر أكثر عرضة لصعوبات النطق؟</p>
+      <label><input type="radio" name="q6" data-correct="true"> أ) الأطفال في سن المدرسة</label>
+      <label><input type="radio" name="q6"> ب) كبار السن فقط</label>
+      <label><input type="radio" name="q6"> ج) الرياضيون</label>
+      <label><input type="radio" name="q6"> د) العاملون في المكاتب</label>
+    </div>
+    
+    <div class="question">
+      <p>7. ما الفرق بين صعوبات النطق وصعوبات اللغة؟</p>
+      <label><input type="radio" name="q7"> أ) لا يوجد فرق</label>
+      <label><input type="radio" name="q7" data-correct="true"> ب) صعوبات النطق تتعلق بإنتاج الأصوات، أما صعوبات اللغة فتتعلق بفهم واستخدام الكلمات</label>
+      <label><input type="radio" name="q7"> ج) صعوبات اللغة تخص القراءة فقط</label>
+      <label><input type="radio" name="q7"> د) صعوبات النطق تحدث بسبب ضعف السمع فقط</label>
+    </div>
+    
+    <div class="buttons">
+      <button onclick="prevQuestion()" id="prevBtn" disabled>السابق</button>
+      <button onclick="handleNext()" id="nextBtn">التالي</button>
+    </div>
+    
+    <div class="fgdsf">
+        <div id="result" style="display:none; margin-top: 20px; font-weight: bold;"></div>
+
+    </div>
+
+  <script>
+     const questions = document.querySelectorAll('.question');
+     let current = 0;
+
+  function updateButtons() {
+    document.getElementById('prevBtn').disabled = current === 0;
+    const nextBtn = document.getElementById('nextBtn');
+    nextBtn.innerText = current === questions.length - 1 ? "عرض النتيجة" : "التالي";
+  }
+
+  function showQuestion(index) {
+    questions.forEach((q, i) => {
+      q.classList.toggle('active', i === index);
+    });
+    updateButtons();
+  }
+
+  function nextQuestion() {
+    if (current < questions.length - 1) {
+      current++;
+      showQuestion(current);
+    }
+  }
+
+  function prevQuestion() {
+    if (current > 0) {
+      current--;
+      showQuestion(current);
+    }
+  }
+
+  function handleNext() {
+    if (current < questions.length - 1) {
+      nextQuestion();
+    } else {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    let score = 0;
+    questions.forEach(q => {
+      const selected = q.querySelector('input[type="radio"]:checked');
+      if (selected && selected.dataset.correct === "true") {
+        score++;
+      }
+    });
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerText = `لقد حصلت على ${score} من ${questions.length}`;
+    resultDiv.style.display = "block";
+  }
+
+  showQuestion(current);
+  </script>
+  <span class="page-number">51</span>
+
+</body>
+</html>

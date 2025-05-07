@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .contanier7 {
+            width: 90%;
+            margin: auto;
+            text-align: right;
+            direction: rtl;
+        }
+        .center-seven{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .center-seven model-viewer{
+            width:100%;
+            height:400px;
+            margin: auto;
+            background-color:rgb(117, 97, 170);
+            border-radius:20px;
+            border:2px solid yellowgreen;
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="contanier7">
+        <div class="top-seven">
+            <ol start="2">
+                <li>السبورات الذكية (Smart Boards):
+                    <ul style="line-height:30px;">
+                        <li style="margin-right:20px;">بديلة للسبورات التقليدية.</li>
+                        <li style="margin-right:20px;">تتيح للمعلم عرض الوسائط المتعددة والتفاعل مع المحتوى بطريقة ديناميكية.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="center-seven">
+            <model-viewer src="model10/scene.gltf" camera-controls ></model-viewer>
+            <audio style="border-radius:30px; width:100%;" src="audio/ElevenLabs_2025-04-18T16_08_20_Will_pre_sp100_s50_sb75_se0_b_m2.mp3" controls></audio>
+        </div>
+    </div>
+    <span class="page-number">3</span>
+
+    
+	  <script type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+
+<script nomodule
+  src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js">
+</script>
+
+    
+</body>
+</html>

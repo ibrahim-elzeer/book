@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contanier100{
+            width: 90%;
+            margin: auto;
+            text-align: right; 
+            z-index:1000;
+            position: relative;
+            direction: rtl;
+        }
+
+        #video{
+            width:100%;
+            margin: auto;
+        }
+
+        #video video{
+            width:100%;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 1s ease;
+            border:2px solid black;
+            border-radius:30px;
+        }
+
+        #video.active video{
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contanier100">
+        <div class="top-eleven">
+            <ol start="5">
+                <li>الروبوتات التعليمية (Educational Robots):
+                    <ul style="line-height:30px;">
+                        <li>تستخدم في تعليم البرمجة وتنمية مهارات التفكير المنطقي.</li>
+                        <li>الألعاب التعليمية (Gamification):</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <p>نبذة عن الروبوت التعليمي:</p>
+                
+        <div id="video">
+            <video id="video-page2" playsinline >
+              <source src="video/ElevenLabs_2025-04-18T20_17_49_Rachel_pre_sp100_s50_sb75_se0_b_m2.mp3.mp4" type="video/mp4" />
+            </video>
+        </div>
+          
+            
+          
+          
+    </div>
+
+    
+    <script>
+    window.onload = function() {
+        localStorage.setItem("currentVideo", "video-page2");
+    }
+
+    </script>
+    <span class="page-number">6</span>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

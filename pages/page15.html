@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .contanier15{
+            width:90%;
+            margin: auto;
+            text-align: right;
+            direction: rtl;
+        }
+
+    .top-fivten {
+        display: grid;
+        grid-template-columns: repeat(3, 170px); /* عمودين كل واحد 250px */
+        grid-template-rows: repeat(3, auto); /* صفين تلقائيين */
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .div1 {
+        border: 2px solid #000000;
+        border-radius:20px;
+        padding: 10px;
+        text-align: center;
+        transition:0.5s ease-in-out;
+    }
+    .div1:hover{
+        transform:translateY(-5px);
+    }
+
+    .div1 img {
+        width: 100%;
+        height: auto;
+    }
+
+        
+    </style>
+</head>
+<body>
+    <div class="contanier15">
+        <h3>📱 أدوات بتدعم الفردية:</h3>
+        <div class="top-fivten">
+            
+            <div id="learnKhan" class="div1">
+                <p>Khan Academy</p>
+                <div style="border-bottom:2px solid; width:100%;" class="border"></div>
+                <div style="width:150px; height:100px; margin: auto;" class="sadw">
+                    <img  src="mg/1200x630wa-removebg-preview(1).png"  onclick="localStorage.setItem('showInfo', 'khan');" alt="">
+                </div>
+            </div>
+            <div class="div1">
+                <p>Duolingo</p>
+                <div style="border-bottom:2px solid; width:100%;" class="border"></div>
+                <div style="width:100px; height:100px; margin: auto;" class="sadw">
+                    <img style="margin-top: 20px;" src="mg/1200x630wa-removebg-preview.png" onclick="localStorage.setItem('showInfo', 'dudo');" alt="">
+                
+            </div>
+
+            </div>
+            <div class="div1">
+                <p>Coursera</p>
+                <div style="border-bottom:2px solid; width:100%;" class="border"></div>
+                <div style="width:100px; height:100px; margin: auto;" class="sadw">
+                    <img style="margin-top: 20px;" src="mg/images-removebg-preview.png" onclick="localStorage.setItem('showInfo', 'cursor');" alt="">
+                </div>
+
+            </div>
+            <div class="div1">
+                <p>Edmodo</p>
+                <div style="border-bottom:2px solid; width:100%;" class="border"></div>
+
+                <div style="width:100px; height:100px; margin: auto;" class="sadw">
+                    <img  src="mg/logo_edmodo-removebg-preview.png" onclick="localStorage.setItem('showInfo', 'edmodo');" alt="">
+                </div>
+
+            </div>
+            <div class="div1">
+                <p>Century Tech</p>
+                <div style="border-bottom:2px solid; width:100%;" class="border"></div>
+                <div style="width:100px; height:100px; margin: auto;" class="sadw">
+                    <img style="margin-top: 20px;" width="150px" src="mg/century-tech.png" onclick="localStorage.setItem('showInfo', 'Century');" alt="">
+                </div>
+
+            </div>
+            <div class="div1">
+                <p>Smart Sparrow</p>
+                <div style="border-bottom:2px solid; width:100%;" class="border"></div>
+                <div style="width:100px; height:100px; margin:  auto;" class="sadw">
+                    <img  src="mg/icon-192-removebg-preview.png" onclick="localStorage.setItem('showInfo', 'Smart');" alt="">
+                </div>
+            </div>
+            <div class="div1">
+                <p>Quizlet</p>
+                <div style="border-bottom:2px solid; width:100%;" class="border"></div>
+                <div style="width:100px; height:100px; margin: auto;" class="sadw">
+                    <img style="margin-top: 20px;" src="mg/05ABkrRIED1JZCmLOfctYTU-38.fit_lim.size_1200x630.v1727366916-removebg-preview.png"  onclick="localStorage.setItem('showInfo', 'Quizlet');" alt="">
+                </div>
+
+            </div>
+            <div class="div1">
+                <p>ClassDojo</p>
+                <div style="border-bottom:2px solid; width:100%;" class="border"></div>
+                <div style="width:100px; height:100px; margin: auto;" class="sadw">
+                    <img style="margin-top: 20px;" src="mg/classdojoicon.png" onclick="localStorage.setItem('showInfo', 'ClassDojo');" alt="">
+                </div>
+
+            </div>
+            <div class="div1">
+                <p>Schoology</p>
+                <div style="border-bottom:2px solid; width:100%;" class="border"></div>
+                <div style="width:100px; height:100px; margin: auto;" class="sadw">
+                    <img  src="mg/unnamed.png" onclick="localStorage.setItem('showInfo', 'Schoology');" alt="">
+                </div>
+
+            </div>
+
+        </div>
+
+        
+    </div>
+    <span class="page-number">11</span>
+   
+</body>
+</html>

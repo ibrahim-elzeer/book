@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>امتحان</title>
+  <style>
+    .wrapper {
+        width: 90%;
+        height: 50%;
+        margin: 20%  auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 4px #2e1d1d;
+        backdrop-filter:blur(5px);
+        font-family: Arial, sans-serif;
+        text-align: right;
+        border:2px solid black;
+    }
+    .question {
+      display: none;
+      margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 8px; 
+        border: 1px solid #ddd; 
+    }
+    .question.active {
+      display: block;
+    }
+    .options label {
+      display: block;
+      margin: 10px 0;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    #result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1 style="text-align: center;">الاسئلة</h1>
+    <form id="quizForm">
+      <div class="question active" id="q1">
+        <p>1. ما هي عاصمة مصر؟</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="أ"> الرياض</label>
+          <label><input type="radio" name="q1" value="ب"> القاهرة</label>
+          <label><input type="radio" name="q1" value="ج"> بيروت</label>
+          <label><input type="radio" name="q1" value="د"> دمشق</label>
+        </div>
+      </div>
+      <div class="question" id="q2">
+        <p>2. كم عدد أيام الأسبوع؟</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="أ"> 5</label>
+          <label><input type="radio" name="q2" value="ب"> 7</label>
+          <label><input type="radio" name="q2" value="ج"> 6</label>
+          <label><input type="radio" name="q2" value="د"> 8</label>
+        </div>
+      </div>
+      <div class="question" id="q3">
+        <p>3. ما هو لون السماء في النهار؟</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="أ"> أحمر</label>
+          <label><input type="radio" name="q3" value="ب"> أخضر</label>
+          <label><input type="radio" name="q3" value="ج"> أزرق</label>
+          <label><input type="radio" name="q3" value="د"> أسود</label>
+        </div>
+      </div>
+      <div class="question" id="q4">
+        <p>4. كم عدد حروف اللغة العربية؟</p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="أ"> 26</label>
+          <label><input type="radio" name="q4" value="ب"> 28</label>
+          <label><input type="radio" name="q4" value="ج"> 30</label>
+          <label><input type="radio" name="q4" value="د"> 24</label>
+        </div>
+      </div>
+      <div class="question" id="q5">
+        <p>5. ما هو الحيوان الذي يلقب بملك الغابة؟</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="أ"> النمر</label>
+          <label><input type="radio" name="q5" value="ب"> الأسد</label>
+          <label><input type="radio" name="q5" value="ج"> الذئب</label>
+          <label><input type="radio" name="q5" value="د"> الفهد</label>
+        </div>
+      </div>
+      <div class="question" id="q6">
+        <p>6. ما هو الشيء الذي نراه ولا نلمسه؟</p>
+        <div class="options">
+          <label><input type="radio" name="q6" value="أ"> الهواء</label>
+          <label><input type="radio" name="q6" value="ب"> الماء</label>
+          <label><input type="radio" name="q6" value="ج"> الحديد</label>
+          <label><input type="radio" name="q6" value="د"> الزجاج</label>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" id="prevBtn" onclick="prevQuestion()">السابق</button>
+        <button type="button" id="nextBtn" onclick="nextQuestion()">التالي</button>
+        <button type="button" id="submitBtn" onclick="submitQuiz()" style="display: none;">إنهاء</button>
+      </div>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    let current = 1;
+    const total = 6;
+
+    function showQuestion(n) {
+      for (let i = 1; i <= total; i++) {
+        document.getElementById("q" + i).classList.remove("active");
+      }
+      document.getElementById("q" + n).classList.add("active");
+
+      document.getElementById("prevBtn").style.display = (n > 1) ? "inline-block" : "none";
+      document.getElementById("nextBtn").style.display = (n < total) ? "inline-block" : "none";
+      document.getElementById("submitBtn").style.display = (n === total) ? "inline-block" : "none";
+    }
+
+    function nextQuestion() {
+      if (current < total) {
+        current++;
+        showQuestion(current);
+      }
+    }
+
+    function prevQuestion() {
+      if (current > 1) {
+        current--;
+        showQuestion(current);
+      }
+    }
+
+    function submitQuiz() {
+      const answers = {
+        q1: "ب",
+        q2: "ب",
+        q3: "ج",
+        q4: "ب",
+        q5: "ب",
+        q6: "أ"
+      };
+      const form = document.getElementById("quizForm");
+      const data = new FormData(form);
+      let score = 0;
+
+      for (let key in answers) {
+        if (data.get(key) === answers[key]) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").textContent = `درجتك: ${score} من ${total}`;
+    }
+
+    showQuestion(current);
+  </script>
+    <span class="page-number">34</span>
+
+</body>
+</html>

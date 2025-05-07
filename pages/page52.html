@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .contanier50{
+            width:90%;
+            margin: auto;
+            text-align:right;
+            direction:rtl;
+        }
+
+        .image1-contanier50{
+            width:300px;
+            margin:20px auto;   
+        }
+
+        .image1-contanier50 img{
+            width:100%;
+            border:2px solid gray;
+            border-radius:20px;
+
+        }
+        .quiz-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+    .question {
+      display: none;
+      text-align: right;
+    }
+    .question.active {
+      display: block;
+    }
+    .navigation {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .correct { color: green; }
+    .wrong { color: red; }
+        
+    </style>
+</head>
+<body>
+    <div class="contanier50">
+        <div class="top-contanier50">
+            <div class="image1-contanier50">
+                <img src="mg/image16.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="quiz-container">
+        <form id="quizForm">
+    
+          <div class="question active">
+            <p>1. ما هو المصطلح الشائع لصعوبة القراءة؟</p>
+            <label><input type="radio" name="q1" value="أ"> الديسغرافيا</label><br>
+            <label><input type="radio" name="q1" value="ب"> الديسلكسيا</label><br>
+            <label><input type="radio" name="q1" value="ج"> الديسكلكوليا</label><br>
+            <label><input type="radio" name="q1" value="د"> الأوتيزم</label>
+          </div>
+    
+          <div class="question">
+            <p>2. أي من العلامات التالية قد تشير إلى صعوبة في الكتابة لدى طفل؟</p>
+            <label><input type="radio" name="q2" value="أ"> صعوبة في فهم التعليمات الشفهية</label><br>
+            <label><input type="radio" name="q2" value="ب"> كتابة غير مقروءة ومليئة بالأخطاء الإملائية</label><br>
+            <label><input type="radio" name="q2" value="ج"> صعوبة في تذكر الحقائق والأرقام</label><br>
+            <label><input type="radio" name="q2" value="د"> صعوبة في التفاعل الاجتماعي</label>
+          </div>
+    
+          <div class="question">
+            <p>3. أي مما يلي يُعتبر صعوبة تعلم نمائية أساسية؟</p>
+            <label><input type="radio" name="q3" value="أ"> عسر القراءة</label><br>
+            <label><input type="radio" name="q3" value="ب"> عسر الكتابة</label><br>
+            <label><input type="radio" name="q3" value="ج"> صعوبة الانتباه</label><br>
+            <label><input type="radio" name="q3" value="د"> صعوبة الحساب</label>
+          </div>
+    
+          <div class="question">
+            <p>4. أي من الآتي ليس من خصائص صعوبات التعلم؟</p>
+            <label><input type="radio" name="q4" value="أ"> وجود فجوة بين القدرة والاستيعاب</label><br>
+            <label><input type="radio" name="q4" value="ب"> مشكلات في الذاكرة العاملة</label><br>
+            <label><input type="radio" name="q4" value="ج"> انخفاض مستوى الذكاء بشكل عام</label><br>
+            <label><input type="radio" name="q4" value="د"> صعوبة في تنظيم المعلومات</label>
+          </div>
+    
+          <div class="question">
+            <p>5. أي من الاستراتيجيات التالية يمكن أن تساعد طالبًا يعاني من عسر القراءة؟</p>
+            <label><input type="radio" name="q5" value="أ"> تكثيف كمية النصوص</label><br>
+            <label><input type="radio" name="q5" value="ب"> استخدام الخطوط الصغيرة</label><br>
+            <label><input type="radio" name="q5" value="ج"> توفير نصوص صوتية</label><br>
+            <label><input type="radio" name="q5" value="د"> الضغط على الطالب للقراءة بسرعة</label>
+          </div>
+    
+          <div class="navigation">
+            <button type="button" class="btn" onclick="prevQuestion()">السابق</button>
+            <button type="button" class="btn" onclick="nextQuestion()">التالي</button>
+          </div>
+    
+          <div class="result" id="result"></div>
+    
+        </form>
+      </div>
+      
+  <script>
+    const questions = document.querySelectorAll('.question');
+    let current = 0;
+
+    function showQuestion(index) {
+      questions.forEach((q, i) => {
+        q.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextQuestion() {
+      if (current < questions.length - 1) {
+        current++;
+        showQuestion(current);
+      } else {
+        checkAnswers();
+      }
+    }
+
+    function prevQuestion() {
+      if (current > 0) {
+        current--;
+        showQuestion(current);
+      }
+    }
+
+    function checkAnswers() {
+      const answers = {
+        q1: 'ب',
+        q2: 'ب',
+        q3: 'ج',
+        q4: 'ج',
+        q5: 'ج'
+      };
+
+      let score = 0;
+      for (let key in answers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      }
+      document.getElementById('result').innerHTML = `النتيجة: ${score} من ${Object.keys(answers).length}`;
+    }
+  </script>
+
+<span class="page-number">44</span>
+
+</body>
+</html>
+
+
+
+
+

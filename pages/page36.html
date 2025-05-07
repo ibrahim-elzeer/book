@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الاختبار</title>
+    <style>
+      /* body {
+        font-family: Arial, sans-serif;
+        direction: rtl;
+        text-align: right;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      } */
+      .container {
+        width: 90%;
+        height: 50%;
+        margin: 20%  auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 4px #2e1d1d;
+        backdrop-filter:blur(5px);
+        font-family: Arial, sans-serif;
+        text-align: right;
+        border:2px solid black;
+      }
+      .question {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 8px; 
+        border: 1px solid #ddd; 
+      }
+      label {
+        font-weight: bold;
+      }
+      .answers {
+        margin-top: 10px;
+      }
+      .answers label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: blue;
+      }
+      .btn-group {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">الاسئلة</h1>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question" id="question1">
+              <label>1. ما المقصود بالإعاقة البصرية؟</label>
+              <div class="answers">
+                <label><input type="radio" name="q1" value="أ"> عدم القدرة على السمع</label>
+                <label><input type="radio" name="q1" value="ب"> ضعف جزئي أو كلي في الرؤية</label>
+                <label><input type="radio" name="q1" value="ج"> صعوبة في الكلام</label>
+                <label><input type="radio" name="q1" value="د"> فقدان التوازن</label>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question" id="question2" style="display:none;">
+              <label>2. من الأسباب التي تؤدي إلى الإعاقة البصرية:</label>
+              <div class="answers">
+                <label><input type="radio" name="q2" value="أ"> أمراض القلب</label>
+                <label><input type="radio" name="q2" value="ب"> التهاب الحلق</label>
+                <label><input type="radio" name="q2" value="ج"> الجلوكوما (المياه الزرقاء)</label>
+                <label><input type="radio" name="q2" value="د"> تسوس الأسنان</label>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question" id="question3" style="display:none;">
+              <label>3. العصا البيضاء تُستخدم في:</label>
+              <div class="answers">
+                <label><input type="radio" name="q3" value="أ"> تحسين السمع</label>
+                <label><input type="radio" name="q3" value="ب"> المساعدة على المشي لذوي الإعاقة البصرية</label>
+                <label><input type="radio" name="q3" value="ج"> التحدث مع الآخرين</label>
+                <label><input type="radio" name="q3" value="د"> تقوية النظر</label>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question" id="question4" style="display:none;">
+              <label>4. أي من الوسائل التالية تساعد ذوي الإعاقة البصرية على قراءة النصوص؟</label>
+              <div class="answers">
+                <label><input type="radio" name="q4" value="أ">  السماعات الطبية</label>
+                <label><input type="radio" name="q4" value="ب">   لبرامج القارئة للشاشة </label>
+                <label><input type="radio" name="q4" value="ج">  الكرسي المتحرك </label>
+                <label><input type="radio" name="q4" value="د">  جهاز التنفس الصناعي</label>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question" id="question5" style="display:none;">
+              <label>5 .من أمثلة التكنولوجيا المساعدة للمكفوفين:</label>
+              <div class="answers">
+                <label><input type="radio" name="q5" value="أ">  برامج تعديل الصور </label>
+                <label><input type="radio" name="q5" value="ب"> تطبيقات الطقس</label>
+                <label><input type="radio" name="q5" value="ج">  القارئ الصوتي للنصوص </label>
+                <label><input type="radio" name="q5" value="د">  تطبيقات الألعاب فقط</label>
+              </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question" id="question6" style="display:none;">
+              <label>6. ما الوسيلة الأساسية التي اعتمد عليها طه حسين في تعلّمه داخل الأزهر والجامعة؟</label>
+              <div class="answers">
+                <label><input type="radio" name="q6" value="أ">  القراءة بطريقة برايل</label>
+                <label><input type="radio" name="q6" value="ب">       السماع والتلقين</label>
+                <label><input type="radio" name="q6" value="ج">  استخدام الحاسوب </label>
+                <label><input type="radio" name="q6" value="د"> مشاهدة الفيديوهات التعليمية </label>
+              </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" id="backButton" onclick="prevQuestion()" style="display:none;">الرجوع</button>
+                <button type="button" id="nextButton" onclick="nextQuestion()">التالي</button>
+                <button type="button" id="submitButton" onclick="submitQuiz()" style="display:none;">إرسال</button>
+            </div>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 6;
+
+        function nextQuestion() {
+            document.getElementById(`question${currentQuestion}`).style.display = "none";
+            currentQuestion++;
+            document.getElementById(`question${currentQuestion}`).style.display = "block";
+
+            if (currentQuestion > 1) {
+                document.getElementById("backButton").style.display = "inline-block";
+            }
+
+            if (currentQuestion === totalQuestions) {
+                document.getElementById("nextButton").style.display = "none";
+                document.getElementById("submitButton").style.display = "inline-block";
+            }
+        }
+
+        function prevQuestion() {
+            document.getElementById(`question${currentQuestion}`).style.display = "none";
+            currentQuestion--;
+            document.getElementById(`question${currentQuestion}`).style.display = "block";
+
+            if (currentQuestion === 1) {
+                document.getElementById("backButton").style.display = "none";
+            }
+
+            document.getElementById("nextButton").style.display = "inline-block";
+            document.getElementById("submitButton").style.display = "none";
+        }
+
+        function submitQuiz() {
+            const form = document.getElementById("quizForm");
+            const formData = new FormData(form);
+            let score = 0;
+
+            const correctAnswers = {
+                q1: "ب",
+                q2: "ج",
+                q3: "ب",
+                q4: "ب",
+                q5: "ب",
+                q6: "ب",
+            };
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const userAnswer = formData.get("q" + i);
+                if (userAnswer === correctAnswers["q" + i]) {
+                    score++;
+                }
+            }
+
+            document.getElementById("result").innerText =
+                `لقد حصلت على ${score} من ${totalQuestions} إجابات صحيحة.`;
+        }
+    </script>
+<span class="page-number">28</span>
+
+</body>
+</html>

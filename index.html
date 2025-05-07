@@ -1,0 +1,660 @@
+<!doctype html>
+<html  lang="ar" dir="auto">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="extras/jquery.min.js"></script>
+<script type="text/javascript" src="extras/jquery-ui.min.js"></script>
+<script type="text/javascript" src="lib/hash.js"></script>
+<script type="text/javascript" src="lib/turn.min.js"></script>
+<script type="text/javascript" src="js/steve-jobs.js"></script>
+<link rel="stylesheet" href="css/steve-jobs.css">
+<link rel="stylesheet" href="css/jquery.ui.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<script src="main.js"></script>
+</head>
+<body>
+	
+	<div id="khan-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+		<div style="background:white; padding:20px; border-radius:10px; max-width:500px; text-align:center; position:relative;">
+			<span onclick="document.getElementById('khan-info').style.display='none'" style="cursor:pointer; position:absolute; top:10px; right:15px; font-size:20px;">×</span>
+			
+			<!-- الصورة اللي هتظهر -->
+			<img id="khan-image" src="mg/1200x630wa-removebg-preview(1).png" alt="Khan Academy" style="width:100%; max-width:300px; margin-bottom:15px;">
+	
+		</div>
+	</div>
+
+	<div id="dudo-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+		<div style="background:white; padding:20px; border-radius:10px; max-width:500px; text-align:center; position:relative;">
+			<span onclick="document.getElementById('dudo-info').style.display='none'" style="cursor:pointer; position:absolute; top:10px; right:15px; font-size:20px;">×</span>
+			
+			<!-- الصورة اللي هتظهر -->
+			<img id="dudo-image" src="mg/1200x630wa-removebg-preview.png" alt="Khan Academy" style="width:100%; max-width:300px; margin-bottom:15px;">
+	
+		</div>
+	</div>
+
+	<div id="cursor-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+		<div style="background:white; padding:20px; border-radius:10px; max-width:500px; text-align:center; position:relative;">
+			<span onclick="document.getElementById('cursor-info').style.display='none'" style="cursor:pointer; position:absolute; top:10px; right:15px; font-size:20px;">×</span>
+			
+			<!-- الصورة اللي هتظهر -->
+			<img id="cursor-image" src="mg/images-removebg-preview.png" alt="Khan Academy" style="width:100%; max-width:300px; margin-bottom:15px;">
+	
+		</div>
+	</div>
+
+	<div id="edmodo-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+		<div style="background:white; padding:20px; border-radius:10px; max-width:500px; text-align:center; position:relative;">
+			<span onclick="document.getElementById('edmodo-info').style.display='none'" style="cursor:pointer; position:absolute; top:10px; right:15px; font-size:20px;">×</span>
+			
+			<!-- الصورة اللي هتظهر -->
+			<img id="edmodo-image" src="mg/logo_edmodo-removebg-preview.png" alt="Khan Academy" style="width:100%; max-width:300px; margin-bottom:15px;">
+	
+		</div>
+	</div>
+
+	<div id="Century-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+		<div style="background:white; padding:20px; border-radius:10px; max-width:500px; text-align:center; position:relative;">
+			<span onclick="document.getElementById('Century-info').style.display='none'" style="cursor:pointer; position:absolute; top:10px; right:15px; font-size:20px;">×</span>
+			
+			<!-- الصورة اللي هتظهر -->
+			<img id="Century-image" src="mg/century-tech.png" alt="Khan Academy" style="width:100%; max-width:300px; margin-bottom:15px;">
+	
+		</div>
+	</div>
+
+	<div id="Smart-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+		<div style="background:white; padding:20px; border-radius:10px; max-width:500px; text-align:center; position:relative;">
+			<span onclick="document.getElementById('Smart-info').style.display='none'" style="cursor:pointer; position:absolute; top:10px; right:15px; font-size:20px;">×</span>
+			
+			<!-- الصورة اللي هتظهر -->
+			<img id="Smart-image" src="mg/icon-192-removebg-preview.png" alt="Khan Academy" style="width:100%; max-width:300px; margin-bottom:15px;">
+	
+		</div>
+	</div>
+
+	<div id="Quizlet-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+		<div style="background:white; padding:20px; border-radius:10px; max-width:500px; text-align:center; position:relative;">
+			<span onclick="document.getElementById('Quizlet-info').style.display='none'" style="cursor:pointer; position:absolute; top:10px; right:15px; font-size:20px;">×</span>
+			
+			<!-- الصورة اللي هتظهر -->
+			<img id="Quizlet-image" src="mg/05ABkrRIED1JZCmLOfctYTU-38.fit_lim.size_1200x630.v1727366916-removebg-preview.png" alt="Khan Academy" style="width:100%; max-width:300px; margin-bottom:15px;">
+	
+		</div>
+	</div>
+
+	<div id="ClassDojo-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+		<div style="background:white; padding:20px; border-radius:10px; max-width:500px; text-align:center; position:relative;">
+			<span onclick="document.getElementById('ClassDojo-info').style.display='none'" style="cursor:pointer; position:absolute; top:10px; right:15px; font-size:20px;">×</span>
+			
+			<!-- الصورة اللي هتظهر -->
+			<img id="ClassDojo-image" src="mg/classdojoicon.png" alt="Khan Academy" style="width:100%; max-width:300px; margin-bottom:15px;">
+	
+		</div>
+	</div>
+
+	<div id="Schoology-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+		<div style="background:white; padding:20px; border-radius:10px; max-width:500px; text-align:center; position:relative;">
+			<span onclick="document.getElementById('Schoology-info').style.display='none'" style="cursor:pointer; position:absolute; top:10px; right:15px; font-size:20px;">×</span>
+			
+			<!-- الصورة اللي هتظهر -->
+			<img id="Schoology-image" src="mg/unnamed.png" alt="Khan Academy" style="width:100%; max-width:300px; margin-bottom:15px;">
+	
+		</div>
+	</div>
+
+
+	<div id="move-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+		<div style="padding:20px; border-radius:10px; width:100%; height:100%; text-align:center; position:relative;">
+			<span onclick="document.getElementById('move-info').style.display='none'" style="cursor:pointer;  font-size:20px; color: rgb(255, 0, 0); font-size:70px; position: absolute; right:0; top:0; margin:50px; display: flex; justify-content: center; align-items: center; padding:10px; ">×</span>
+			
+			<!-- الصورة اللي هتظهر -->
+			<div class="okfe">
+				<div><video src="video/A disabled boy turns playground bullies into friends.mp4" controls></video></div>
+				<div><video src="video/Cordas- Cuerdas_Dublado Português.mp4" controls></video></div>
+				<div><video src="video/سواسية - فيلم عن ذوي الإحتياجات الخاصة.mp4" controls></video></div>
+				<div><video src="video/فيلم قصير (عالم الاطفال ذوي الاحتياجات الخاصة ).mp4" controls></video></div>
+				
+			</div>
+
+	
+		</div>
+	</div>
+
+
+	<div id="ear-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+		<div style="padding:20px; border-radius:10px; width:100%; height:100%; text-align:center; position:relative;">
+			<span onclick="document.getElementById('ear-info').style.display='none'" style="cursor:pointer;  font-size:20px; color: rgb(255, 0, 0); font-size:70px; position: absolute; right:0; top:0; margin:50px; display: flex; justify-content: center; align-items: center; padding:10px; ">×</span>
+			
+			<!-- الصورة اللي هتظهر -->
+					<div class="contanierrr1">
+						<div class="div11">
+							
+							<div class="left">
+								<div class="image-contanierrr2">
+									<img src="mg/22676355_80_cmVtb3RlX3dvcmtpbmctMDg.jpg" alt="">
+								</div>
+							</div>
+							<div class="right">
+								<iframe style="width:100%;  border:none;" src="index1.html"></iframe>
+							</div>
+						</div>
+						<div class="div22">
+							
+							<div class="left">
+								<div class="image-contanierrr2">
+									<img src="mg/Marlee-Matlin_Broward-College-Speaker-Series-e1546456770775.jpg" alt="">
+								</div>
+							</div>
+							<div class="right">
+								<iframe style="width:100%; height:500px; border:none;" src="index2.html"></iframe>
+
+							</div>
+						</div>
+						<div class="div33">
+							
+							<div class="left">
+								<div class="image-contanierrr2">
+									<img src="mg/sk96_j90j_230421.jpg" alt="">
+								</div>
+							</div>
+							<div class="right">
+								<iframe style="width:100%;height:500px; border:none;" src="index3.html"></iframe>
+								
+							</div>
+						</div>
+
+						<div class="div44">
+							
+							<div class="left">
+								<div class="image-contanierrr2">
+									<img src="mg/idddmages.jpg" alt="">
+								</div>
+							</div>
+							<div class="right">							
+								<iframe style="width:100%; height:500px; border:none;" src="index4.html"></iframe>							
+							</div>
+						</div>
+						<div class="div55">
+							
+							<div class="left">
+								<div class="image-contanierrr2">
+									<img src="mg/21852411_sysadmin_03.jpg" alt="">
+								</div>
+							</div>
+							<div class="right">
+								<iframe style="width:100%; height:500px; border:none;" src="index5.html"></iframe>								
+							</div>
+						</div>
+						
+					</div>
+	
+		</div>
+	</div>
+
+
+	
+<div id="vanta-bgd"></div>
+<div id="canvas">
+	
+	<div class="next-buttton">
+		<i class="fa-solid fa-chevron-right"></i>
+	</div>
+		<div id="book-zoom">
+		
+			<div class="sj-book"><div depth="5" class="hard"><div class="side"></div> 
+			</div>
+				<div depth="5" class="hard front-side"> <div class="depth"></div> </div>
+				<div  class="own-size">
+					<div class="page-video" id="videoPage">
+						<p id="videoText">المقدمة</p>
+						<video id="myVideo" playsinline>
+						  <source src="video/ElevenLabs_2025-04-17T11_48_34_Will_pre_sp100_s50_sb75_se0_b_m2.mp3.mp4" type="video/mp4" />
+						</video>
+					</div>
+				</div>
+				<div  class="own-size even">
+				</div>
+				<div class="hard fixed back-side p95"> <div class="depth"></div> </div>
+				<div class="hard p96"></div>
+	
+			</div>
+			
+		</div>
+	<div class="pervious-buttton">
+		<i class="fa-solid fa-chevron-left"></i>
+	</div>
+	<div id="slider-bar" class="turnjs-slider">
+		<div id="slider"></div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+
+function loadApp() {
+	
+	var flipbook = $('.sj-book');
+
+	// Check if the CSS was already loaded
+	
+	if (flipbook.width()==0 || flipbook.height()==0) {
+		setTimeout(loadApp, 10);
+		return;
+	}
+
+	// Mousewheel
+
+	$('#book-zoom').on('wheel', function(event) {
+	    event = event.originalEvent;
+		
+		var data = $(this).data(),
+			flipbook = $('.sj-book'),
+			view = flipbook.turn('view', page).filter( (page) => page != 0 ),
+			page = flipbook.turn('page'),
+			delay = 500; //ms
+		
+		if(typeof(data.scrollTimer)==='undefined') data.scrollTimer = 0;
+
+		if(data.scrollTimer > event.timeStamp) return;
+
+		data.scrollTimer = event.timeStamp + delay;
+
+		if(event.deltaY > 0) page = Math.max(...view) + 1;
+		if(event.deltaY < 0) page = Math.min(...view) - 1;
+		
+		page = Math.max(Math.min(flipbook.turn('pages'),page),1);
+		
+		flipbook.turn('page', page);
+
+	});
+
+	// Slider
+
+	$( "#slider" ).slider({
+		min: 1,
+		max: 100,
+
+		start: function(event, ui) {
+
+			if (!window._thumbPreview) {
+				_thumbPreview = $('<div />', {'class': 'thumbnail'}).html('<div></div>');
+				setPreview(ui.value);
+				_thumbPreview.appendTo($(ui.handle));
+			} else
+				setPreview(ui.value);
+
+			moveBar(false);
+
+		},
+
+		slide: function(event, ui) {
+
+			setPreview(ui.value);
+
+		},
+
+		stop: function() {
+
+			if (window._thumbPreview)
+				_thumbPreview.removeClass('show');
+			
+			$('.sj-book').turn('page', Math.max(1, $(this).slider('value')*2 - 2));
+
+		}
+	});
+
+
+	// URIs
+	
+	Hash.on('^page\/([0-9]*)$', {
+		yep: function(path, parts) {
+
+			var page = parts[1];
+
+			if (page!==undefined) {
+				if ($('.sj-book').turn('is'))
+					$('.sj-book').turn('page', page);
+			}
+
+		},
+		nop: function(path) {
+
+			if ($('.sj-book').turn('is'))
+				$('.sj-book').turn('page', 1);
+		}
+	});
+
+	// Arrows
+
+	$(document).on('keydown', function(e){
+
+		var previous = 37, next = 39;
+
+		switch (e.keyCode) {
+			case previous:
+
+				$('.sj-book').turn('previous');
+
+			break;
+			case next:
+				
+				$('.sj-book').turn('next');
+
+			break;
+		}
+
+	});
+
+
+	// Flipbook
+
+	flipbook.on(($.isTouch) ? 'touchend' : 'click', zoomHandle);
+
+	flipbook.turn({
+		elevation: 50,
+		acceleration: true,
+		autoCenter: true,
+		gradients: true,
+		duration: 1500,
+		width:1360,
+		height:700,
+		pages: 96,
+		when: {
+			turning: function(e, page, view) {
+				
+				var book = $(this),
+					currentPage = book.turn('page'),
+					pages = book.turn('pages');
+
+				if (currentPage>3 && currentPage<pages-3) {
+				
+					if (page==1) {
+						book.turn('page', 2).turn('stop').turn('page', page);
+						e.preventDefault();
+						return;
+					} else if (page==pages) {
+						book.turn('page', pages-1).turn('stop').turn('page', page);
+						e.preventDefault();
+						return;
+					}
+				} else if (page>3 && page<pages-3) {
+					if (currentPage==1) {
+						book.turn('page', 2).turn('stop').turn('page', page);
+						e.preventDefault();
+						return;
+					} else if (currentPage==pages) {
+						book.turn('page', pages-1).turn('stop').turn('page', page);
+						e.preventDefault();
+						return;
+					}
+				}
+
+				updateDepth(book, page);
+				
+				if (page>=2)
+					$('.sj-book .p2').addClass('fixed');
+				else
+					$('.sj-book .p2').removeClass('fixed');
+
+				if (page<book.turn('pages'))
+					$('.sj-book .p95').addClass('fixed');
+				else
+					$('.sj-book .p95').removeClass('fixed');
+
+				Hash.go('page/'+page).update();
+					
+			},
+
+			turned: function(e, page, view) {
+
+				var book = $(this);
+
+				if (page==2 || page==3) {
+					book.turn('peel', 'br');
+				}
+
+				updateDepth(book);
+				
+				$('#slider').slider('value', getViewNumber(book, page));
+
+				book.turn('center');
+
+			},
+
+			start: function(e, pageObj) {
+		
+				moveBar(true);
+
+			},
+
+			end: function(e, pageObj) {
+			
+				var book = $(this);
+
+				updateDepth(book);
+
+				setTimeout(function() {
+					
+					$('#slider').slider('value', getViewNumber(book));
+
+				}, 1);
+
+				moveBar(false);
+
+			},
+
+			missing: function (e, pages) {
+
+				for (var i = 0; i < pages.length; i++) {
+					addPage(pages[i], $(this));
+				}
+
+			}
+		}
+	});
+
+
+	$('#slider').slider('option', 'max', numberOfViews(flipbook));
+
+	flipbook.addClass('animated');
+
+	// Show canvas
+
+	$('#canvas').css({visibility: ''});
+}
+
+// Hide canvas
+
+$('#canvas').css({visibility: 'hidden'});
+
+// Load turn.js
+
+loadApp()
+const videoPage = document.querySelector("#videoPage");
+const video = document.getElementById("myVideo");
+
+// لما تقلب صفحات الكتاب
+$("#book-zoom").bind("turned", function (event, page, view) {
+  
+  if (page === 2 || page === 3) {
+    videoPage.classList.add("active");
+    video.currentTime = 0;
+    video.muted = false;
+    video.play();
+  } else {
+    video.pause();
+    video.currentTime = 0;
+    videoPage.classList.remove("active");
+  }
+  
+});
+
+
+video.onended = function () {
+  videoPage.classList.remove("active");
+};
+
+
+
+document.addEventListener("click", function () {
+    const infoToShow = localStorage.getItem("Info");
+    if (infoToShow === "ear") {
+      document.getElementById("ear-info").style.display = "flex";
+      localStorage.removeItem("Info"); 
+    }
+});
+
+
+document.addEventListener("click", function () {
+    const infoToShow = localStorage.getItem("Info");
+    if (infoToShow === "movee") {
+      document.getElementById("move-info").style.display = "flex";
+      localStorage.removeItem("Info"); 
+    }
+});
+
+
+document.addEventListener("click", function () {
+    const infoToShow = localStorage.getItem("showInfo");
+    if (infoToShow === "khan") {
+      document.getElementById("khan-info").style.display = "flex";
+      localStorage.removeItem("showInfo"); 
+    }
+  });
+
+  document.addEventListener("click", function () {
+    const infoToShow = localStorage.getItem("showInfo");
+    if (infoToShow === "dudo") {
+      document.getElementById("dudo-info").style.display = "flex";
+      localStorage.removeItem("showInfo"); 
+    }
+  });
+
+  document.addEventListener("click", function () {
+    const infoToShow = localStorage.getItem("showInfo");
+    if (infoToShow === "cursor") {
+      document.getElementById("cursor-info").style.display = "flex";
+      localStorage.removeItem("showInfo"); 
+    }
+  });
+  document.addEventListener("click", function () {
+    const infoToShow = localStorage.getItem("showInfo");
+    if (infoToShow === "edmodo") {
+      document.getElementById("edmodo-info").style.display = "flex";
+      localStorage.removeItem("showInfo"); 
+    }
+  });
+
+  document.addEventListener("click", function () {
+    const infoToShow = localStorage.getItem("showInfo");
+    if (infoToShow === "Century") {
+      document.getElementById("Century-info").style.display = "flex";
+      localStorage.removeItem("showInfo"); 
+    }
+  });
+
+  document.addEventListener("click", function () {
+    const infoToShow = localStorage.getItem("showInfo");
+    if (infoToShow === "Smart") {
+      document.getElementById("Smart-info").style.display = "flex";
+      localStorage.removeItem("showInfo"); 
+    }
+  });
+
+  document.addEventListener("click", function () {
+    const infoToShow = localStorage.getItem("showInfo");
+    if (infoToShow === "Quizlet") {
+      document.getElementById("Quizlet-info").style.display = "flex";
+      localStorage.removeItem("showInfo"); 
+    }
+  });
+
+  document.addEventListener("click", function () {
+    const infoToShow = localStorage.getItem("showInfo");
+    if (infoToShow === "ClassDojo") {
+      document.getElementById("ClassDojo-info").style.display = "flex";
+      localStorage.removeItem("showInfo"); 
+    }
+  });
+  
+  document.addEventListener("click", function () {
+    const infoToShow = localStorage.getItem("showInfo");
+    if (infoToShow === "Schoology") {
+      document.getElementById("Schoology-info").style.display = "flex";
+      localStorage.removeItem("showInfo"); 
+    }
+  });
+
+  document.querySelector('.next-buttton').addEventListener('click', function () {
+    $('#book-zoom .sj-book').turn('next');
+  });
+
+  document.querySelector('.pervious-buttton').addEventListener('click', function () {
+    $('#book-zoom .sj-book').turn('previous');
+  });
+
+
+
+
+
+
+  $("#book-zoom").bind("turned", function(event, page, view) {
+  const videoId = localStorage.getItem("currentVideo");
+  const dfde = document.querySelector("#video");
+  const videoElement = document.getElementById(videoId);
+
+  if (videoElement) {
+    if ([10, 11, 24, 25, 72, 73, 84, 85, 94, 95].includes(page)) {
+      videoElement.currentTime = 0;
+      videoElement.muted = false;
+      dfde.classList.add("active");
+      videoElement.play();
+
+      // لما يخلص الفيديو يشيل الـ active
+      videoElement.onended = function () {
+        dfde.classList.remove("active");
+      };
+
+    } else {
+      // وقف الفيديو وشيل التأثير
+      videoElement.pause();
+      videoElement.currentTime = 0;
+      dfde.classList.remove("active");
+    }
+  }
+});
+
+
+
+
+
+
+VANTA.NET({
+ el: "#vanta-bgd",
+mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  color: 0xffffff,
+  backgroundColor: 0x5a00ff
+})
+
+
+
+
+</script>
+
+</body>
+</html>
+

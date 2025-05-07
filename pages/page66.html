@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+
+.contanier64{
+    width:90%;
+    margin: auto;
+    text-align: right;
+    direction: rtl;
+}
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .faq-item {
+      background-color: #fff;
+      border-top-left-radius:20px;
+      border-bottom-right-radius:20px;
+      margin-bottom: 10px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+      margin-top: 10px;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      opacity: 1;
+    }
+
+    .icon {
+      font-size: 34px;
+      transition: transform 0.3s ease;
+      color:blue;
+    }
+
+    .faq-item.active .icon {
+      transform: rotate(45deg);
+      color:red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>أسئلة عن التوحد</h1>
+
+  <div class="contanier64">
+    
+  <div class="faq-item">
+    <div class="faq-question">
+      1) ما هو طيف التوحد؟
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      طيف التوحد هو مجموعة من الاضطرابات العصبية التي تؤثر على التواصل والسلوك وتختلف شدته من شخص لآخر.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      2) ما هي الأسباب الرئيسية للتوحد ؟
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      الأسباب غير معروفة بدقة، ولكن يُعتقد أن العوامل الوراثية والبيئية تلعب دوراً في الإصابة به.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      3) هل يوجد علاج للتوحد وهل يمكن الشفاء منه؟
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      لا يوجد شفاء تام، لكن يمكن تحسين المهارات والسلوكيات باستخدام العلاج السلوكي والتعليمي والدعم.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      4) ما هو التوحد عالي الأداء؟
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      هو نوع من التوحد حيث يكون لدى الشخص مهارات معرفية جيدة لكنه يعاني من صعوبات اجتماعية وسلوكية.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">
+      5) متى تظهر أعراض التوحد لدى الطفل؟
+      <span class="icon">+</span>
+    </div>
+    <div class="faq-answer">
+      غالبًا ما تظهر الأعراض قبل سن الثالثة، وقد يلاحظ الوالدان تأخرًا في الكلام أو التواصل.
+    </div>
+  </div>
+  
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+<span class="page-number">58</span>
+
+</body>
+</html>
