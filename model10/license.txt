@@ -1,0 +1,11 @@
+Model Information:
+* title:	Interactive Whiteboard
+* source:	https://sketchfab.com/3d-models/interactive-whiteboard-7b143cf8affc434b8d082187e05e4a27
+* author:	FurryPawsDesigns (https://sketchfab.com/FurryPawsDesigns)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Interactive Whiteboard" (https://sketchfab.com/3d-models/interactive-whiteboard-7b143cf8affc434b8d082187e05e4a27) by FurryPawsDesigns (https://sketchfab.com/FurryPawsDesigns) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
